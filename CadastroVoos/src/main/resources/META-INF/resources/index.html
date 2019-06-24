@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Página de Exemplo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Servidor REST utilizando API REST-RS com CDI e JPA</h1>
+        
+        
+        <p>
+            A partir de tal endereço, cada classe anotada com <i>@Path</i> irá definir caminhos
+            adicionais. Por exemplo, para acessar a API de acesso a dados de usuários,
+            temos algumas URIs como:
+
+
+
+
+Consultar voos por origem, destino, data de partida e faixa de preço
+
+Cadastrar reserva do voo
+
+Alterar reserva do voo
+
+Excluir reserva do voo
+
+
+            <ul>
+                <li><a href="/api/hello">Consultar voos por origem e destino</a></li>
+                <li><a href="/api/hello/Manoel">Consultar voos por origem, destino e data de partida</a></li>
+                <li><a href="/api/usuario/1">http://localhost:8080/api/usuario/1</a> para buscar usuário pelo ID</li>
+                <li><a href="/api/usuario/cpf/11111111111">http://localhost:8080/api/usuario/cpf/11111111111</a> para buscar usuário pelo CPF</li>
+            </ul>
+        </p>
+    </body>
+</html>
