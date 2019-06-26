@@ -5,10 +5,8 @@ import com.jeremiasneres.model.Piloto;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -20,6 +18,8 @@ import javax.ws.rs.core.MediaType;
  */
 @Transactional
 @Path("/piloto")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class PilotoResource {
    
     @Inject
@@ -27,7 +27,6 @@ public class PilotoResource {
 
     @GET
     @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
     public Piloto findById(@PathParam("id") long id) {
        //System.out.println("findById: " + id);
         return dao.findById(id);
@@ -35,8 +34,8 @@ public class PilotoResource {
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
     public void insert(Piloto piloto) {
         dao.save(piloto);
     }
+
 }

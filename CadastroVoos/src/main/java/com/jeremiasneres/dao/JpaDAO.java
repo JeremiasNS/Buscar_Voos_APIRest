@@ -24,18 +24,25 @@ public class JpaDAO<T extends Cadastro> implements DAO<T> {
 
     @Override
     public T findById(Long id) {
-        return em.find(classe, id);
+        return getEm().find(classe, id);
     }
 
     @Override
     public void save(T entity) {
-        em.persist(entity);
+        getEm().persist(entity);
     }
 
     @Override
     public boolean remove(Long id) {
-        em.remove(id);
+        getEm().remove(id);
         return true;
+    }
+
+    /**
+     * @return the em
+     */
+    public EntityManager getEm() {
+        return em;
     }
 
 }

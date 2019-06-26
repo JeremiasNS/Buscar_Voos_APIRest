@@ -3,6 +3,7 @@ package com.jeremiasneres.config;
 import com.jeremiasneres.dao.DAO;
 import com.jeremiasneres.model.Cadastro;
 import com.jeremiasneres.dao.JpaDAO;
+import com.jeremiasneres.dao.VooDAO;
 import java.lang.reflect.ParameterizedType;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
@@ -22,7 +23,12 @@ public class Producers {
     public <T extends Cadastro> DAO<T> getDao(InjectionPoint ip) {
         ParameterizedType t = (ParameterizedType) ip.getType();
         Class classe = (Class) t.getActualTypeArguments()[0];
-        return new JpaDAO(em, classe);
+        return new JpaDAO<>(em, classe);
+    }
+
+    @Produces
+    public VooDAO getVooDao(InjectionPoint ip) {
+        return new VooDAO(em);
     }
     
 }
