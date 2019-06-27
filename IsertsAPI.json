@@ -1,0 +1,22 @@
+http://localhost:8080/api/voo
+
+{
+    "cidadeOrigem":"Palmas",
+    "cidadeDestino":"Brasilia",
+    "numeroVoo":"5556",
+    "precoPacagem":"500",
+    "aviao":"1",
+    "piloto":"1",
+    "horadataPartida":"2019-05-30",
+    "horadataChegada":"2019-05-30"
+    }
+
+http://localhost:8080/api/piloto
+    {
+        "cht":"55223",
+        "cpf":"12345678915",
+        "datadeNascimento":"1982-04-05",
+        "nome":"Jonh",
+        "telefone":"9123456712"
+        }
+    

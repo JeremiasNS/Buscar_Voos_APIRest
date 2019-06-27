@@ -12,10 +12,36 @@ insert into Aviao (capacidadePassageiros, dataFabricacao, modelo) values (600, '
 insert into Aviao (capacidadePassageiros, dataFabricacao, modelo) values (180, '2009-05-30', 'Boeing 707');
 
 --Insere Estados
-insert into Estado (UF, nome, pais) values ('TO','Tocantins','Brasil');
-insert into Estado (UF, nome, pais) values ('SP','São Paulo','Brasil');
-insert into Estado (UF, nome, pais) values ('GO','Goias','Brasil');
-insert into Estado (UF, nome, pais) values ('MA','Maranhão','Brasil');
+
+insert into Estado (nome, UF, pais) values
+( 'Acre', 'AC', 'Brasil'),
+( 'Alagoas', 'AL', 'Brasil'),
+( 'Amazonas', 'AM', 'Brasil'),
+( 'Amapá', 'AP', 'Brasil'),
+( 'Bahia', 'BA', 'Brasil'),
+( 'Ceará', 'CE', 'Brasil'),
+( 'Distrito Federal', 'DF', 'Brasil'),
+( 'Espírito Santo', 'ES', 'Brasil'),
+( 'Minas Gerais', 'MG', 'Brasil'),
+( 'Mato Grosso do Sul', 'MS', 'Brasil'),
+('Mato Grosso', 'MT', 'Brasil'),
+('Pará', 'PA', 'Brasil'),
+('Paraíba', 'PB', 'Brasil'),
+('Pernambuco', 'PE', 'Brasil'),
+('Piauí', 'PI', 'Brasil'),
+('Paraná', 'PR', 'Brasil'),
+('Rio de Janeiro', 'RJ', 'Brasil'),
+('Rio Grande do Norte', 'RN', 'Brasil'),
+('Rondônia', 'RO', 'Brasil'),
+('Roraima', 'RR', 'Brasil'),
+('Rio Grande do Sul', 'RS', 'Brasil'),
+('Santa Catarina', 'SC', 'Brasil'),
+('Sergipe', 'SE', 'Brasil');
+('Tocantins', 'TO', 'Brasil');
+('São Paulo', 'SP', 'Brasil');
+('Goiás', 'GO', 'Brasil');
+('Maranhão', 'MA', 'Brasil');
+
 
 ----Inserir Cidades
 insert into Cidade (nome, estado_id) values ('Palmas','1');
