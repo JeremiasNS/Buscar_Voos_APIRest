@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author Jeremias_Neres
  */
 public class Producers {
-       @Produces
+    @Produces
     @PersistenceContext
     private EntityManager em;
 
