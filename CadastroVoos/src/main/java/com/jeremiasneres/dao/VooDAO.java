@@ -27,8 +27,8 @@ public class VooDAO extends JpaDAO<Voo> {
         getEm().persist(entity);
     }
 
-    public boolean remove(Voo voo) {
+    /*public boolean remove(Voo voo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 
 }
