@@ -2,6 +2,7 @@ package com.jeremiasneres.rest;
 
 import com.jeremiasneres.dao.DAO;
 import com.jeremiasneres.model.Piloto;
+import com.jeremiasneres.model.Voo;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;

@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 /**
  *
  * @author aluno
+ * @param <T>
  */
 public class JpaDAO<T extends Cadastro> implements DAO<T> {
 
