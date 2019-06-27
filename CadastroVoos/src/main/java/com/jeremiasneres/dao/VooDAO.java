@@ -14,11 +14,11 @@ public class VooDAO extends JpaDAO<Voo> {
         super(em, Voo.class);
     }
 
-    public Voo findByOrigemDestino(String cidadeOrigem, String cidadeDestino) {
-        String jpql = "select v from Voo v where cidadeOrigem = :cidadeOrigem and cidadeDestino = :cidadeDestino";
+    public Voo findByOrigemDestino(long idCidadeOrigem, long idCidadeDestino) {
+        String jpql = "select v from Voo v where cidadeOrigem.id = :cidadeOrigem and cidadeDestino.id = :cidadeDestino";
         TypedQuery<Voo> query = getEm().createQuery(jpql, Voo.class);
-        query.setParameter("cidadeOrigem", cidadeOrigem);
-        query.setParameter("cidadeDestino", cidadeDestino);
+        query.setParameter("cidadeOrigem", idCidadeOrigem);
+        query.setParameter("cidadeDestino", idCidadeDestino);
         return query.getSingleResult();
     }
 

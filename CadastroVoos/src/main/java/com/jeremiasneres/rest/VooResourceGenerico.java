@@ -1,6 +1,7 @@
 package com.jeremiasneres.rest;
 
 import com.jeremiasneres.dao.DAO;
+import com.jeremiasneres.dao.VooDAO;
 import com.jeremiasneres.model.Voo;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -20,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 public class VooResourceGenerico {
     
     @Inject
-    private DAO<Voo> dao;
+    private VooDAO dao;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
