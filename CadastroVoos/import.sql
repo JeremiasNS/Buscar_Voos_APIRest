@@ -4,7 +4,9 @@
 
 #select * from Voo;
 #select * from Aviao;
-
+#select * from Cidade;
+#show tables;
+#show databases;
 
 #Insere Pilotos
 insert into Piloto (cht,cpf, dataNascimento, nome, telefone) values 
@@ -57,4 +59,4 @@ insert into Cidade (nome, estado_id) values ('Goiânia','3');
 insert into Cidade (nome, estado_id) values ('Brasilia','3');
 
 #Inserir Voos
-insert into Voo (horadataChegada, horadataPartida, numeroVoo, precoPacagem, aviao_id, cidadeDestino_id, cidadeOrigem_id, piloto_id) values ('2019-05-30 07:30:21','2019-05-30 08:30:21',5556,500,1,4,1,1);
+insert into Voo (horadataChegada, horadataPartida, numeroVoo, precoPacagem, aviao_id, cidadeDestino_id, cidadeOrigem_id, piloto_id) values ('2019-05-30','2019-05-30',5556,500,1,4,1,1);

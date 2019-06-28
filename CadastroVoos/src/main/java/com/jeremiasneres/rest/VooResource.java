@@ -7,13 +7,13 @@ package com.jeremiasneres.rest;
 
 import com.jeremiasneres.dao.VooDAO;
 import com.jeremiasneres.model.Voo;
+import java.time.LocalDate;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -48,7 +48,17 @@ public class VooResource {
     public Voo findByOrigemDestino(@PathParam("origem") long idOrigem, @PathParam("destino") long idDestino) {
         return dao.findByOrigemDestino(idOrigem, idDestino);
     }
+    
+    //Consultar voos por origem, destino e data de partida
+    @GET
+    @Path("{origem}/{destino}/{datapartida}")
+    public Voo findByOrigemDestino(@PathParam("origem") long idOrigem, 
+            @PathParam("destino") long idDestino, 
+            @PathParam("datapartida") String dataPartida) {
+        return dao.findByOrigemDestinoDataPartida(idOrigem, idDestino, LocalDate.parse(dataPartida));
+    }
 
+    
     //Cadastrar reserva do voo
     @POST
     public void insert(Voo voo) {

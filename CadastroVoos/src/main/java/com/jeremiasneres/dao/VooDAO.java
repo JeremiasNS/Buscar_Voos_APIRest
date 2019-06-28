@@ -1,6 +1,7 @@
 package com.jeremiasneres.dao;
 
 import com.jeremiasneres.model.Voo;
+import java.time.LocalDate;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -19,6 +20,14 @@ public class VooDAO extends JpaDAO<Voo> {
         TypedQuery<Voo> query = getEm().createQuery(jpql, Voo.class);
         query.setParameter("cidadeOrigem", idCidadeOrigem);
         query.setParameter("cidadeDestino", idCidadeDestino);
+        return query.getSingleResult();
+    }
+    public Voo findByOrigemDestinoDataPartida(long idCidadeOrigem, long idCidadeDestino, LocalDate dataPartida) {
+        String jpql = "select v from Voo v where cidadeOrigem.id = :cidadeOrigem and cidadeDestino.id = :cidadeDestino and horadataPartida = :horadataPartida";
+        TypedQuery<Voo> query = getEm().createQuery(jpql, Voo.class);
+        query.setParameter("cidadeOrigem", idCidadeOrigem);
+        query.setParameter("cidadeDestino", idCidadeDestino);
+        query.setParameter("horadataPartida", dataPartida);
         return query.getSingleResult();
     }
 
