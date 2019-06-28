@@ -26,7 +26,7 @@ public class Voo implements Cadastro {
 
     private int numeroVoo;
 
-    private double precoPacagem;
+    private long precoPacagem;
 
     @ManyToOne
     private Aviao aviao;
@@ -71,11 +71,11 @@ public class Voo implements Cadastro {
         this.numeroVoo = numeroVoo;
     }
 
-    public double getPrecoPacagem() {
+    public long getPrecoPacagem() {
         return precoPacagem;
     }
 
-    public void setPrecoPacagem(double precoPacagem) {
+    public void setPrecoPacagem(long precoPacagem) {
         this.precoPacagem = precoPacagem;
     }
 

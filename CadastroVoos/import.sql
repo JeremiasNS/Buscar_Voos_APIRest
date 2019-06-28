@@ -10,8 +10,8 @@
 
 #Insere Pilotos
 insert into Piloto (cht,cpf, dataNascimento, nome, telefone) values 
-(12345,"12345678910","10/12/86","Arthur","9123456789"),
-(12346,"12345678911","10/12/83","Alberto","9123456710");
+(12345,'12345678910','10-12-86','Arthur','9123456789'),
+(12346,'12345678911','10-12-83','Alberto','9123456710');
 
 
 #Insere Aviões

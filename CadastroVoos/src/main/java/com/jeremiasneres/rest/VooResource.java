@@ -14,6 +14,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -53,10 +54,21 @@ public class VooResource {
     //Consultar voos por origem, destino e data de partida
     @GET
     @Path("{origem}/{destino}/{datapartida}")
-    public Voo findByOrigemDestino(@PathParam("origem") long idOrigem,
+    public Voo findByOrigemDestinoDataPartida(@PathParam("origem") long idOrigem,
             @PathParam("destino") long idDestino,
             @PathParam("datapartida") String dataPartida) {
         return dao.findByOrigemDestinoDataPartida(idOrigem, idDestino, LocalDate.parse(dataPartida));
+    }
+    
+    //Consultar voos por origem, destino, data de partida e faixa de preço
+    @GET
+    @Path("{origem}/{destino}/{dataPartida}/{preco}")
+    public Voo findByOrigemDestinoFaixaPreco(@PathParam("origem") long idOrigem,
+            @PathParam("destino") long idDestino,
+            @PathParam("dataPartida") String dataPartida,
+            @PathParam("preco") long preco){
+        return dao.findByOrigemDestinoFaixaPreco(idOrigem, idDestino, 
+                LocalDate.parse(dataPartida), preco);
     }
 
     //Cadastrar reserva do voo
@@ -66,16 +78,11 @@ public class VooResource {
     }
 
     //Alterar reserva do voo--
-/*    @PUT
-    public void update(Voo voo) {
-        Voo vooBuscado = dao.findById(voo.getId());
-        dao.save(vooBuscado);
-    }
     @PUT
     public boolean update(Voo voo) {
-        //Voo vooBuscado = dao.findById(voo.getId());
         return dao.save(voo) > 0;
-    }*/
+    }
+
     
     
     @DELETE
