@@ -34,16 +34,19 @@ public class JpaDAO<T extends Cadastro> implements DAO<T> {
     }
 
     @Override
-    public boolean remove(Long id) {
-        getEm().remove(id);
+    public boolean delete(T entity) {
+        em.remove(entity);
         return true;
     }
 
+    
     /**
      * @return the em
      */
     public EntityManager getEm() {
         return em;
     }
+
+
 
 }

@@ -17,7 +17,9 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 /**
  *
@@ -41,24 +43,22 @@ public class VooResource {
         // return new Piloto();
     }
      */
-
     //Consultar voos por origem e destino
     @GET
     @Path("{origem}/{destino}")
     public Voo findByOrigemDestino(@PathParam("origem") long idOrigem, @PathParam("destino") long idDestino) {
         return dao.findByOrigemDestino(idOrigem, idDestino);
     }
-    
+
     //Consultar voos por origem, destino e data de partida
     @GET
     @Path("{origem}/{destino}/{datapartida}")
-    public Voo findByOrigemDestino(@PathParam("origem") long idOrigem, 
-            @PathParam("destino") long idDestino, 
+    public Voo findByOrigemDestino(@PathParam("origem") long idOrigem,
+            @PathParam("destino") long idDestino,
             @PathParam("datapartida") String dataPartida) {
         return dao.findByOrigemDestinoDataPartida(idOrigem, idDestino, LocalDate.parse(dataPartida));
     }
 
-    
     //Cadastrar reserva do voo
     @POST
     public void insert(Voo voo) {
@@ -76,11 +76,17 @@ public class VooResource {
         //Voo vooBuscado = dao.findById(voo.getId());
         return dao.save(voo) > 0;
     }*/
-
+    
+    
     @DELETE
-    public boolean delete(Voo voo) {
-        System.out.println("findById: " + voo);
-        return dao.remove(voo.getId());
+    @Path("{id}")
+    public boolean delete(@PathParam("id") long id) {
+        Voo voo = dao.findById(id);
+        if (voo == null) {
+            throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+
+        return dao.delete(voo);
     }
 
 }
