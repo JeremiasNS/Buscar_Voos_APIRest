@@ -12,6 +12,10 @@ public interface DAO<T extends Cadastro> {
 
     void save(T entity);
     
-    boolean remove (Long id);
+   boolean delete(T entity);
+   // boolean delete(long id);
+
+    
+
 
 }
