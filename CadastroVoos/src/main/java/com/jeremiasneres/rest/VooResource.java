@@ -36,11 +36,7 @@ public class VooResource {
     @Inject
     private VooDAO dao;
 
-<<<<<<< HEAD
  //Consultar voos por origem e destino
-=======
-    //Consultar voos por origem e destino
->>>>>>> f78c545... Implantando demais funcionalidades
     @GET
     @Path("{origem}/{destino}")
      public Voo findByOrigemDestino(@PathParam("origem") long idOrigem, @PathParam("destino") long idDestino) {
