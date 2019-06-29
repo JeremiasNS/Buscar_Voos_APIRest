@@ -9,6 +9,7 @@ import com.jeremiasneres.dao.VooDAO;
 import com.jeremiasneres.model.Voo;
 import java.time.LocalDate;
 import javax.inject.Inject;
+import javax.persistence.NoResultException;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -24,7 +25,7 @@ import javax.ws.rs.core.Response;
 
 /**
  *
- * @author aluno
+ * @author Jeremias Neres
  */
 @Transactional
 @Path("/voo")
@@ -35,7 +36,11 @@ public class VooResource {
     @Inject
     private VooDAO dao;
 
+<<<<<<< HEAD
  //Consultar voos por origem e destino
+=======
+    //Consultar voos por origem e destino
+>>>>>>> f78c545... Implantando demais funcionalidades
     @GET
     @Path("{origem}/{destino}")
      public Voo findByOrigemDestino(@PathParam("origem") long idOrigem, @PathParam("destino") long idDestino) {

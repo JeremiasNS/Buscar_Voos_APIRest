@@ -1,3 +1,8 @@
+/**
+ * Author:  jeremias
+ * Created: 28/06/2019
+ */
+
 #create database cadastro_rest_jeremias;
 
 #use cadastro_rest_jeremias;
@@ -19,8 +24,7 @@ insert into Aviao (capacidadePassageiros, dataFabricacao, modelo) values
 (600, '2008-05-30', 'Airbus A380'),
 (180, '2009-05-30', 'Boeing 707');
 
-#Insere Estados
-
+#Inserir Estados
 insert into Estado (nome, UF, pais) values
 ( 'Acre', 'AC', 'Brasil'),
 ( 'Alagoas', 'AL', 'Brasil'),
