@@ -35,29 +35,11 @@ public class VooResource {
     @Inject
     private VooDAO dao;
 
-    /*
+ //Consultar voos por origem e destino
     @GET
     @Path("{origem}/{destino}")
-    public Voo findById(@PathParam("destino") long id) {
-        //System.out.println("findById: " + id);
-        return dao.findById(id);
-        // return new Piloto();
-    }
-     */
-    //Consultar voos por origem e destino
-    @GET
-    @Path("{origem}/{destino}")
-    public Voo findByOrigemDestino(@PathParam("origem") long idOrigem, @PathParam("destino") long idDestino) {
+     public Voo findByOrigemDestino(@PathParam("origem") long idOrigem, @PathParam("destino") long idDestino) {
         return dao.findByOrigemDestino(idOrigem, idDestino);
-    }
-
-    //Consultar voos por origem, destino e data de partida
-    @GET
-    @Path("{origem}/{destino}/{datapartida}")
-    public Voo findByOrigemDestinoDataPartida(@PathParam("origem") long idOrigem,
-            @PathParam("destino") long idDestino,
-            @PathParam("datapartida") String dataPartida) {
-        return dao.findByOrigemDestinoDataPartida(idOrigem, idDestino, LocalDate.parse(dataPartida));
     }
     
     //Consultar voos por origem, destino, data de partida e faixa de preço
@@ -70,21 +52,30 @@ public class VooResource {
         return dao.findByOrigemDestinoFaixaPreco(idOrigem, idDestino, 
                 LocalDate.parse(dataPartida), preco);
     }
+    
+    //Consultar voos por origem, destino e data de partida
+    @GET
+    @Path("{origem}/{destino}/{datapartida}")
+    public Voo findByOrigemDestinoDataPartida(@PathParam("origem") long idOrigem,
+            @PathParam("destino") long idDestino,
+            @PathParam("datapartida") String dataPartida) {
+        return dao.findByOrigemDestinoDataPartida(idOrigem, idDestino, LocalDate.parse(dataPartida));
+    }
 
     //Cadastrar reserva do voo
     @POST
     public void insert(Voo voo) {
-        dao.save(voo);
+        dao.saveForPost(voo);
     }
 
-    //Alterar reserva do voo--
+    //Alterar reserva do voo
     @PUT
     public boolean update(Voo voo) {
         return dao.save(voo) > 0;
     }
 
     
-    
+    //Excluir reserva do voo
     @DELETE
     @Path("{id}")
     public boolean delete(@PathParam("id") long id) {

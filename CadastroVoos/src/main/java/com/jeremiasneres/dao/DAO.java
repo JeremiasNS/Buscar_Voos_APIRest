@@ -10,7 +10,7 @@ public interface DAO<T extends Cadastro> {
 
     T findById(Long id);
 
-    //void save(T entity);
+    void saveForPost(T entity);
 
     boolean delete(T entity);
    // boolean delete(long id);

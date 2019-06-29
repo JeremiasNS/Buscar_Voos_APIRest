@@ -46,10 +46,10 @@ public class VooDAO extends JpaDAO<Voo> {
         return query.getSingleResult();
     }
 
-    /*@Override
-    public void save(Voo entity) {
+    @Override
+    public void saveForPost(Voo entity) {
         getEm().persist(entity);
-    }*/
+    }
     
     @Override
     public long save(Voo entity) {

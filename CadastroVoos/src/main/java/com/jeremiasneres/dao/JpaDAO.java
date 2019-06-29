@@ -28,10 +28,11 @@ public class JpaDAO<T extends Cadastro> implements DAO<T> {
         return getEm().find(classe, id);
     }
 
-    /* @Override
-    public void save(T entity) {
+     @Override
+    public void saveForPost(T entity) {
         getEm().persist(entity);
-    }*/
+    }
+    
     @Override
     public long save(T entity) {
         /*Se a entidade tem um ID maior que 0 é porque está sendo
