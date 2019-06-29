@@ -1,0 +1,63 @@
+{
+    "info": {
+        "name": "RESTer",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "REST_Voo",
+            "item": [
+                {
+                    "request": {
+                        "url": "http://localhost:8080/api/voo",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\":1,\n    \"cidadeOrigem\": {\n        \"id\": 1\n    },\n    \"cidadeDestino\": {\n        \"id\": 4\n    },\n    \"numeroVoo\": \"5556\",\n    \"precoPacagem\": 500,\n    \"aviao\": {\n        \"id\": 1\n    },\n    \"piloto\": {\n        \"id\": 1\n    },\n    \"horadataPartida\": \"2019-05-30\",\n    \"horadataChegada\": \"2019-05-30\"\n}"
+                        }
+                    },
+                    "id": "rester-1",
+                    "name": "Alterar reserva do voo"
+                },
+                {
+                    "request": {
+                        "url": "http://localhost:8080/api/voo",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"cidadeOrigem\": {\n        \"id\": 1\n    },\n    \"cidadeDestino\": {\n        \"id\": 2\n    },\n    \"numeroVoo\": \"5556\",\n    \"precoPacagem\": 500,\n    \"aviao\": {\n        \"id\": 1\n    },\n    \"piloto\": {\n        \"id\": 1\n    },\n    \"horadataPartida\": \"2019-05-30\",\n    \"horadataChegada\": \"2019-05-30\"\n}"
+                        }
+                    },
+                    "id": "rester-2",
+                    "name": "Cadastrar Voo"
+                },
+                {
+                    "request": {
+                        "url": "http://localhost:8080/api/voo/2",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ]
+                    },
+                    "id": "rester-3",
+                    "name": "Excluir reserva do voo"
+                }
+            ]
+        }
+    ]
+}

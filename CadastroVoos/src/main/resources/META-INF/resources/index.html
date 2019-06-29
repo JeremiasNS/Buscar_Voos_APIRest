@@ -1,19 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Página de Exemplo</title>
+        <title>Servidor REST</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            .li0{
+                list-style-type: none;
+                padding-left: 14px
+            }
+            .li1{
+
+                list-style-type: none;
+                padding-bottom: 7px;
+                padding-left: 28px
+            }
+            .color{color: red}
+        </style>
     </head>
     <body>
         <h1>Servidor REST utilizando API REST-RS com CDI e JPA</h1>
         <ul>
-            <li>Consultar voos por origem e destino -</li>
-            <li>Consultar voos por origem, destino, data de partida e faixa de preço -</li>
-            <li>Consultar voos por origem, destino e data de partida -</li>
-            <li>Cadastrar reserva do voo -</li>
+            <li>Cadastrar reserva do voo </li>
+            <li class="li0"  style="padding-bottom: 7px;">Para realizar o cadastro, sugere-se os seguintes plugins:<br>
+                Para o Firefox você pode baixar o plugin <a href="https://addons.mozilla.org/pt-BR/firefox/addon/rester/">RESTer</a>.<br>
+                Para o Google Chrome a extensão 
+                <a href="https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm/">Restlet Client</a>.</li>
+
+            <li>Consultar voos por origem e destino </li>
+            <li class="li0">http://localhost:8080/api/voo/idOrigem/idDestino</li>
+            <li class="li1"><a href="http://localhost:8080/api/voo/1/4">http://localhost:8080/api/voo/1/4</a></li>
+
+            <li>Consultar voos por origem, destino, data de partida e faixa de preço </li>
+            <li class="li0">http://localhost:8080/api/voo/idOrigem/idDestino/datadepartida/preco</li>
+            <li class="li1"><a href="http://localhost:8080/api/voo/1/4/2019-05-30/500">http://localhost:8080/api/voo/1/4/2019-05-30/500</a></li>
+
+            <li>Consultar voos por origem, destino e data de partida </li>
+            <li class="li0">http://localhost:8080/api/voo/idOrigem/idDestino/datadepartida</li>
+            <li class="li1"><a href="http://localhost:8080/api/voo/1/4/2019-05-30">http://localhost:8080/api/voo/1/4/2019-05-30</a></li>
+
             <li>Alterar reserva do voo </li>
-            <li>Excluir reserva do voo -</li>
+            <li class="li1">Utilizando o metódo PUT, faça a operação com um dos plugins aqui citado.</li>
+
+            <li>Excluir reserva do voo </li>
+            <li class="li0">http://localhost:8080/api/voo/id-do-voo</li>
         </ul>
+
+        <p>Na pasta do projeto, há o arquivo "ConsultaVoosBkp.json", este se importado<br> 
+            para a extensão do chrome (Restlet Client),posibilita alguns metódos pré formatados.<br>
+            No caso da utilização via RESTer instalado no firefox importe o arquivo "Rester-export-.json".</p>
+
+        <p>Jeremias Neres Silva</p>
 
     </body>
 </html>
