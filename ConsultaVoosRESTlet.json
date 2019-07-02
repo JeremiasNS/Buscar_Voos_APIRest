@@ -4,8 +4,8 @@
   "nodes": [
     {
       "type": "Project",
-      "id": "a53c87a3-a101-47c2-ae60-180874778968",
-      "lastModified": "2019-06-28T11:18:13.219-03:00",
+      "id": "8954c077-a0e3-430b-a9e3-38eb64b74460",
+      "lastModified": "2019-07-02T19:20:07.738-03:00",
       "name": "ConsultaVoos"
     },
     {
@@ -36,19 +36,18 @@
         "host": "localhost:8080",
         "path": "/api/voo/1"
       },
-      "id": "eeb88bce-e8a9-4298-b153-146728be1cac",
-      "lastModified": "2019-06-28T10:05:17.496-03:00",
+      "id": "8adf6b7a-2e1e-4855-9428-ce2db90ec06d",
+      "lastModified": "2019-07-02T18:56:52.220-03:00",
       "name": "VooDELETE",
       "headers": [],
       "metaInfo": {},
-      "parentId": "a53c87a3-a101-47c2-ae60-180874778968"
+      "parentId": "8954c077-a0e3-430b-a9e3-38eb64b74460"
     },
     {
       "type": "Request",
       "method": {
-        "requestBody": true,
-        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
-        "name": "POST"
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
       },
       "body": {
         "formBody": {
@@ -57,8 +56,7 @@
           "items": []
         },
         "bodyType": "Text",
-        "autoSetLength": true,
-        "textBody": "{\n    \"cidadeOrigem\": {\n        \"id\": 1\n    },\n    \"cidadeDestino\": {\n        \"id\": 5\n    },\n    \"numeroVoo\": \"5556\",\n    \"precoPacagem\": 500,\n    \"aviao\": {\n        \"id\": 1\n    },\n    \"piloto\": {\n        \"id\": 1\n    },\n    \"horadataPartida\": \"2019-05-30\",\n    \"horadataChegada\": \"2019-05-30\"\n}"
+        "autoSetLength": true
       },
       "headersType": "Form",
       "uri": {
@@ -71,20 +69,49 @@
           "version": "V11"
         },
         "host": "localhost:8080",
-        "path": "/api/voo"
+        "path": "/api/voo/1/4"
       },
-      "id": "84c152b0-538a-4e3e-82db-f434ae913d25",
-      "lastModified": "2019-06-28T10:44:30.029-03:00",
-      "name": "VooPOST",
-      "headers": [
-        {
-          "enabled": true,
-          "name": "Content-Type",
-          "value": "application/json"
-        }
-      ],
+      "id": "5ad217b4-7c6e-4428-9206-c875d5a57db8",
+      "lastModified": "2019-07-02T19:20:07.739-03:00",
+      "name": "VooGET - Origem e destino",
+      "headers": [],
       "metaInfo": {},
-      "parentId": "a53c87a3-a101-47c2-ae60-180874778968"
+      "parentId": "8954c077-a0e3-430b-a9e3-38eb64b74460"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/api/voo/1/4/2019-05-30"
+      },
+      "id": "4f0f3d94-755c-49bb-8a8c-7c5515adefff",
+      "lastModified": "2019-07-02T19:19:05.570-03:00",
+      "name": "VooGET-Origem, destino e data de partida",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "8954c077-a0e3-430b-a9e3-38eb64b74460"
     },
     {
       "type": "Request",
@@ -115,91 +142,12 @@
         "host": "localhost:8080",
         "path": "/api/voo/1/4/2019-05-30/500"
       },
-      "id": "5e8dfd35-f72f-41e5-a08d-5d6bbf4c1e70",
-      "lastModified": "2019-06-28T11:00:08.921-03:00",
-      "name": "VooPOST-Origem, destino, data de partida e faixa de preço",
+      "id": "9d47725c-1da5-434c-a1a7-a2c4844c7149",
+      "lastModified": "2019-07-02T19:17:17.301-03:00",
+      "name": "VooGET-Origem, destino, data de partida e faixa de preço",
       "headers": [],
       "metaInfo": {},
-      "parentId": "a53c87a3-a101-47c2-ae60-180874778968"
-    },
-    {
-      "type": "Request",
-      "method": {
-        "requestBody": true,
-        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
-        "name": "PUT"
-      },
-      "body": {
-        "formBody": {
-          "overrideContentType": true,
-          "encoding": "application/x-www-form-urlencoded",
-          "items": []
-        },
-        "bodyType": "Text",
-        "autoSetLength": true,
-        "textBody": "{\n   \"id\":9,\n  \t\"cidadeOrigem\": {\n        \"id\": 1\n    },\n    \"cidadeDestino\": {\n        \"id\": 7\n    },\n    \"numeroVoo\": \"5556\",\n    \"precoPacagem\": 300,\n    \"aviao\": {\n        \"id\": 1\n    },\n    \"piloto\": {\n        \"id\": 1\n    },\n    \"horadataPartida\": \"2019-05-30\",\n    \"horadataChegada\": \"2019-05-30\"\n}"
-      },
-      "headersType": "Form",
-      "uri": {
-        "query": {
-          "delimiter": "&",
-          "items": []
-        },
-        "scheme": {
-          "name": "http",
-          "version": "V11"
-        },
-        "host": "localhost:8080",
-        "path": "/api/voo"
-      },
-      "id": "73cee05e-3c3e-4d1c-a1b6-6df6f7606dee",
-      "lastModified": "2019-06-28T11:18:13.221-03:00",
-      "name": "VooPUT",
-      "headers": [
-        {
-          "enabled": true,
-          "name": "Content-Type",
-          "value": "application/json"
-        }
-      ],
-      "metaInfo": {},
-      "parentId": "a53c87a3-a101-47c2-ae60-180874778968"
-    },
-    {
-      "type": "Request",
-      "method": {
-        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
-        "name": "GET"
-      },
-      "body": {
-        "formBody": {
-          "overrideContentType": true,
-          "encoding": "application/x-www-form-urlencoded",
-          "items": []
-        },
-        "bodyType": "Text",
-        "autoSetLength": true,
-        "textBody": "{\"cht\": \"12345678\", \"cpf\":\"1234567891\", \"dataNascimento\": \"10/12/80\", \"nome\": \"Teófilo\", \"telefone\": \"9123456789\"}\n"
-      },
-      "headersType": "Form",
-      "uri": {
-        "query": {
-          "delimiter": "&",
-          "items": []
-        },
-        "scheme": {
-          "name": "http",
-          "version": "V11"
-        },
-        "host": "localhost:8080",
-        "path": "/BuscarVoos_Jeremias_Neres/api/piloto/8"
-      },
-      "id": "36d558a9-e339-44ff-9125-fd559796adb3",
-      "lastModified": "2019-06-28T08:54:17.485-03:00",
-      "name": "pilotoGet",
-      "headers": [],
-      "metaInfo": {},
-      "parentId": "a53c87a3-a101-47c2-ae60-180874778968"
+      "parentId": "8954c077-a0e3-430b-a9e3-38eb64b74460"
     },
     {
       "type": "Request",
@@ -216,7 +164,7 @@
         },
         "bodyType": "Text",
         "autoSetLength": true,
-        "textBody": "{\"cht\": \"12345678\", \"cpf\":\"1234567891\", \"dataNascimento\": \"10/12/80\", \"nome\": \"Teófilo\", \"telefone\": \"9123456789\"}\n"
+        "textBody": "{\n    \"cidadeOrigem\": {\n        \"id\": 1\n    },\n    \"cidadeDestino\": {\n        \"id\": 5\n    },\n    \"numeroVoo\": \"5556\",\n    \"precoPacagem\": 500,\n    \"aviao\": {\n        \"id\": 1\n    },\n    \"piloto\": {\n        \"id\": 1\n    },\n    \"horadataPartida\": \"2019-05-30\",\n    \"horadataChegada\": \"2019-05-30\"\n}"
       },
       "headersType": "Form",
       "uri": {
@@ -229,11 +177,11 @@
           "version": "V11"
         },
         "host": "localhost:8080",
-        "path": "/BuscarVoos_Jeremias_Neres/api/piloto/"
+        "path": "/api/voo"
       },
-      "id": "38ccf86a-624d-4ca1-854b-3a282ec78c62",
-      "lastModified": "2019-06-28T08:54:17.485-03:00",
-      "name": "pilotoInsert",
+      "id": "201e172d-6f89-47e2-9db7-7f3eef9f2915",
+      "lastModified": "2019-07-02T18:56:52.220-03:00",
+      "name": "VooPOST",
       "headers": [
         {
           "enabled": true,
@@ -242,7 +190,50 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "a53c87a3-a101-47c2-ae60-180874778968"
+      "parentId": "8954c077-a0e3-430b-a9e3-38eb64b74460"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+        "name": "PUT"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n   \"id\":3,\n  \t\"cidadeOrigem\": {\n        \"id\": 1\n    },\n    \"cidadeDestino\": {\n        \"id\": 2\n    },\n    \"numeroVoo\": \"5556\",\n    \"precoPacagem\": 300,\n    \"aviao\": {\n        \"id\": 1\n    },\n    \"piloto\": {\n        \"id\": 1\n    },\n    \"horadataPartida\": \"2019-05-30\",\n    \"horadataChegada\": \"2019-05-30\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/api/voo"
+      },
+      "id": "ea53d2d4-495a-46e3-a271-25ba2c12b677",
+      "lastModified": "2019-07-02T19:16:44.435-03:00",
+      "name": "VooPUT",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "8954c077-a0e3-430b-a9e3-38eb64b74460"
     }
   ]
 }
