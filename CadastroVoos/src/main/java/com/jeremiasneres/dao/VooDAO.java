@@ -31,7 +31,7 @@ public class VooDAO extends JpaDAO<Voo> {
         return query.getSingleResult();
     }
 
-    public Voo findByOrigemDestinoFaixaPreco(long idCidadeOrigem, long idCidadeDestino, 
+    public Voo findByOrigemDestinoPreco(long idCidadeOrigem, long idCidadeDestino, 
             LocalDate dataPartida,  long preco) {
         String jpql = "select v from Voo v where cidadeOrigem.id = :cidadeOrigem "
                 + "and cidadeDestino.id = :cidadeDestino "
@@ -43,6 +43,22 @@ public class VooDAO extends JpaDAO<Voo> {
         query.setParameter("cidadeDestino", idCidadeDestino);
         query.setParameter("horadataPartida", dataPartida);
         query.setParameter("precoPacagem", preco);
+        return query.getSingleResult();
+    }
+
+    public Voo findByOrigemDestinoFaixaPreco(long idCidadeOrigem, long idCidadeDestino, 
+            LocalDate dataPartida, long dePreco, long atePreco) {
+        String jpql = "select v from Voo v where cidadeOrigem.id = :cidadeOrigem "
+                + "and cidadeDestino.id = :cidadeDestino "
+                + "and horadataPartida = :horadataPartida "
+                + "and precoPacagem >= :dePreco "
+                + "and precoPacagem <= :atePreco";
+        TypedQuery<Voo> query = getEm().createQuery(jpql, Voo.class);
+        query.setParameter("cidadeOrigem", idCidadeOrigem);
+        query.setParameter("cidadeDestino", idCidadeDestino);
+        query.setParameter("horadataPartida", dataPartida);
+        query.setParameter("dePreco", dePreco);
+        query.setParameter("atePreco", atePreco);
         return query.getSingleResult();
     }
 

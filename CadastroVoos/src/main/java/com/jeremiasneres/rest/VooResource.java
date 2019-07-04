@@ -43,18 +43,30 @@ public class VooResource {
         return dao.findByOrigemDestino(idOrigem, idDestino);
     }
     
-    //Consultar voos por origem, destino, data de partida e faixa de preço
+    //Consultar voos por origem, destino, data de partida e preço
     @GET
     @Path("{origem}/{destino}/{dataPartida}/{preco}")
     public Voo findByOrigemDestinoFaixaPreco(@PathParam("origem") long idOrigem,
             @PathParam("destino") long idDestino,
             @PathParam("dataPartida") String dataPartida,
             @PathParam("preco") long preco){
-        return dao.findByOrigemDestinoFaixaPreco(idOrigem, idDestino, 
+        return dao.findByOrigemDestinoPreco(idOrigem, idDestino, 
                 LocalDate.parse(dataPartida), preco);
     }
+
+    //Consultar voos por origem, destino, data de partida e faixa de preço
+    @GET
+    @Path("{origem}/{destino}/{dataPartida}/{dePreco}/{atePreco}")
+    public Voo findByOrigemDestinoFaixaPreco(@PathParam("origem") long idOrigem,
+            @PathParam("destino") long idDestino,
+            @PathParam("dataPartida") String dataPartida,
+            @PathParam("dePreco") long dePreco,
+            @PathParam("atePreco") long atePreco){
+        return dao.findByOrigemDestinoFaixaPreco(idOrigem, idDestino, 
+                LocalDate.parse(dataPartida), dePreco, atePreco);
+    }
     
-    //Consultar voos por origem, destino e data de partida
+    //Consultar voos por origem, destino e data de partidao
     @GET
     @Path("{origem}/{destino}/{datapartida}")
     public Voo findByOrigemDestinoDataPartida(@PathParam("origem") long idOrigem,
